@@ -9,6 +9,7 @@
 # 相关开发配置
 1. `publicimport.js`中引入用于全局使用的库，例如：`jQuery、lodash`等
 2. 目前在index.js中初始化Cesium.Viewer对象，在以后的开发中，如果需要对viewer进行处理，可以在modeles中加入更多的包，以`addTerrain.js`为例：
+
 ```
 import Cesium from 'cesium/Cesium'
 
@@ -24,6 +25,7 @@ export function addTerrain(cesiumViewer) {
 ```
 
 具体使用则在`index.js`中引入包
+
 ```
 import {addTerrain} from './modules/addTerrain'
 

@@ -24,18 +24,30 @@ module.exports = {
         }, {
             test: /\.(png|gif|jpg|jpeg|svg|xml|json)$/,
             use: ['url-loader']
-        }]
+        }, {
+            test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/
+        }],
+        loaders: [
+            {
+                test: /[\/\\]node_modules[\/\\]some-module[\/\\]index\.js$/,
+                loader: "imports-loader?this=>window"
+            }
+        ]
     },
     plugins: [
         new HtmlWebpackPlugin({
             template: 'src/index.html'
         }),
         new CopywebpackPlugin([{from: path.join(cesiumSource, cesiumWorkers), to: 'Workers'}]),
-        new CopywebpackPlugin([{from: path.join(cesiumSource, 'Assets'), to: 'Assets'}]),
-        new CopywebpackPlugin([{from: path.join(cesiumSource, 'Widgets'), to: 'Widgets'}]),
+        // new CopywebpackPlugin([{from: path.join(cesiumSource, 'Assets'), to: 'Assets'}]),
+        // new CopywebpackPlugin([{from: path.join(cesiumSource, 'Widgets'), to: 'Widgets'}]),
         new webpack.DefinePlugin({
             // Define relative base path in cesium for loading assets
             CESIUM_BASE_URL: JSON.stringify('')
+        }),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery'
         })
     ],
     devServer: {
@@ -59,7 +71,8 @@ module.exports = {
     resolve: {
         alias: {
             // Cesium module name
-            cesium: path.resolve(__dirname, cesiumSource)
+            cesium: path.resolve(__dirname, cesiumSource),
+            jquery: "jquery/src/jquery"
         }
     },
 };

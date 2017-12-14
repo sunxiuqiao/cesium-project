@@ -21,6 +21,6 @@
   },
   "scripts": {
     "build": "node_modules/.bin/webpack --config webpack.config.js",
-    "start": "node_modules/.bin/webpack-dev-server --config webpack.config.js --open --port 12345"
+    "start": "node_modules/.bin/webpack-dev-server --config webpack.config.js --open"
   }
 }

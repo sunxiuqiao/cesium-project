@@ -5,24 +5,24 @@
     <title>湖北省水文水资源局洪水3D演进模型系统</title>
 </head>
 <body>
-	<header>
+	<div class="header">
 		<div class="head-top">
 			<div id="logo">
-				<img src="">
+				<img src="./images/logo.png">
 				<p>湖北省水文水资源局洪水3D演进模型系统</p>
 			</div>
 			<div class="module">
 				<ul class="nav">
-					<li id="rain"><a href="#"><img src=""/><p>实时水雨情</p></a></li>
-					<li id="flood"><a href="#"><img src=""/><p>洪水分析</p>
-						<ul id="flood_drop_drown">
+					<li id="rain"><a href="#"><img src="./images/ico_sunny.png"/><p>实时水雨情</p></a></li>
+					<li id="flood"><a href="#"><img src="./images/ico_sunny.png"/><p>洪水分析</p>
+						<ul>
 							<li id="corss_process"><a href="#">断面过程</a></li>
-							<li id="plan_management"><a href="#"></a></li>
+							<li id="plan_management"><a href="#">方案管理</a></li>
 							<li id="flood_forecast"><a href="#">洪水分析</a></li>
 						</ul>
 					</a></li>
-					<li id="atmosphere"><a href="#"><img src=""/><p>气象预报</p>
-						<ul class="atmosphere">
+					<li id="atmosphere"><a href="#"><img src="./images/ico_sunny.png"/><p>气象预报</p>
+						<ul>
 			    			<li id="atmosphere_forecast"><a href="#">气象预报</a></li>
 			    			<li id="cloud_atlas"><a href="#">卫星云图</a></li>
 			    		</ul>
@@ -30,26 +30,82 @@
 				</ul>
 			</div>
 			<div id="admin_login">
-				<img src=""/>
+				<img src="./images/icon_admin.png"/>
 			</div>
 		</div>
 		<div class="head-menu">
-			<p id="hor_distance">水平量测</p>
-			<p id="ver_distance">垂直量测</p>
-			<P id="area">面积测量</P>
-			<hr class="line1" />
-			<img src=""/>
-			<p id="f_sun">晴天</p>
-			<img src=""/>
-			<p id="f_rain">雨天</p>
-			<img src=""/>
-			<p id="f_snow">雪天</p>
-			<hr class="line2"/>
+			<div class="layers_manager">
+				<img src="./images/icon_tool_03.png"/>
+				<button id="layers_btn" class="button button--moema button--border-thick button--size-s">
+					<img src="./images/icon_tool_07.png"/>
+					<span>基础图层</span>
+				</button>
+				<button id="station_scope_btn"  class="button button--moema button--border-thick button--size-s">
+					<img src="./images/ico_11.png"/>
+					<span>站点范围</span>
+				</button>
+				<button id="station_refresh_btn"  class="button button--moema button--border-thick button--size-s">
+					<img src="./images/icon_tool_18.png"/>
+					<span>刷新站点</span>
+				</button>
+			</div>
+			<div class="project_info">
+				<img src="./images/icon_tool_03.png"/>
+				<button id="project_scope_btn">
+					<img src="./images/ico_home.png"/>
+					<span>项目范围</span>
+				</button>
+				<button id="compass_btn">
+					<img src="./images/ico_north.png"/>
+					<span>指北</span>
+				</button>
+			</div>
+			<div class="mearsure_tool">
+				<img src="./images/icon_tool_03.png"/>
+				<button id="horztional_btn">
+					<img src="./images/icon_tool_11.png"/>
+					<span>水平量测</span>
+				</button>
+				<button id="vertional_btn">
+					<img src="./images/icon_tool_13.png"/>
+					<span >垂直量测</span>
+				</button>
+				<button id="poloygon_area_btn">
+					<img src="./images/icon_tool_15.png"/>
+					<span>面积测量</span>
+				</button>
+				<button id="clear_feature_btn">
+					<img src="./images/icon_tool_17.png">
+					<span>清除要素</span>
+				</button>
+			</div>
+			<div class="atmosphere_tool">
+				<img src="./images/icon_tool_03.png"/>
+				<button id="sunny_btn">
+					<img src="./images/ico_sunny.png" class="img_sun" />
+					<span >晴天</span>
+				</button>
+				<button id="rainny_btn">
+					<img src="./images/ico_rainny.png" class="img_rain" />
+					<span>雨天</span>
+				</button>
+				<button id="snowy_btn">
+					<img src="./images/ico_snowy.png" class="img_snow" />
+					<span > 雪天</span>
+				</button>
+			</div>
+			<div class="operation_info">
+				<div id="operation_btn">
+					<img src="./images/ico_snowy.png"/>
+					<span>操作提示</span>
+				</div>
+				
+			</div>
 		</div>
-	</header>
-	<main>
+	</div>
+	<div class="main">
 		<div id="cesium-container"></div>
-	</main>
+	</div>
     
 </body>
 </html>
